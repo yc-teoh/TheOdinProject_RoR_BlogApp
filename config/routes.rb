@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   # get "/articles", to: "articles#index"
   # get "/articles/:id", to: "articles#show"
   # ------ REPLACEMENT OF THE TWO 'GET' METHODS ABOVE ------ #
-  resources :articles
+  # ------ Includes the route to Comment model ------ #
+  resources :articles do
+    resources :comments
+  end
 end
