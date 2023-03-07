@@ -16,7 +16,8 @@
 <!--- Showing comments --->
 
 <h2>Comments</h2>
-<% @article.comments.each do |comment| %>
+<!--- No partial --->
+<!--- <% @article.comments.each do |comment| %>
   <p>
     <strong>Commenter:</strong>
     <%= comment.commenter %>
@@ -26,13 +27,15 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
-<% end %>
+<% end %> --->
+<%= render @article.comments %>
 
 
 <!--- Comment Model --->
 
 <h2>Add a comment:</h2>
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+<!--- No partial --->
+<!--- <%= form_with model: [ @article, @article.comments.build ] do |form| %>
   <p>
     <%= form.label :commenter %><br>
     <%= form.text_field :commenter %>
@@ -46,4 +49,5 @@
   <p>
     <%= form.submit %>
   </p>
-<% end %>
+<% end %> --->
+<%= render 'comments/form' %>
